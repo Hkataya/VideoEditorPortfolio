@@ -1,17 +1,27 @@
-window.onload = function(){
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+}   
+
+
+document.getElementsByClassName("btn")[0].onclick = function(){
+
     
- $("html, body").animate({ scrollTop: 0 }, "slow");
-    $("#header").fadeIn(1500, descFade);
-    function descFade(){
-        $("#desc").fadeIn(1000, function(){$("nav").fadeIn(1000)});
-    }
+    form();
+
+}
+
+document.getElementById("hire").onclick = function(){
+    
+    form();
+    
 }
 
 
-$(".btn").on("click", form);
-
-$("#hire").on("click", form);
 function form(){
-$(".btn").hide();
-    $(".form").slideDown(1000);
+
+    document.getElementsByClassName("btn")[0].style.display = 'none';
+    
+    
+    document.getElementById("form").style.maxHeight = "1000px";
+   
 }
